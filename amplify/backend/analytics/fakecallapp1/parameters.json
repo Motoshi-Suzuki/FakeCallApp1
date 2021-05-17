@@ -1,0 +1,21 @@
+{
+    "appName": "fakecallapp1",
+    "roleName": "pinpointLambdaRole78a80233",
+    "cloudformationPolicyName": "cloudformationPolicy78a80233",
+    "cloudWatchPolicyName": "cloudWatchPolicy78a80233",
+    "pinpointPolicyName": "pinpointPolicy78a80233",
+    "authPolicyName": "pinpoint_amplify_78a80233",
+    "unauthPolicyName": "pinpoint_amplify_78a80233",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fakecallapp1-dev-231802-authRole",
+      "UnauthRoleArn": "arn:aws:iam::856218697005:role/amplify-fakecallapp1-dev-231802-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::856218697005:role/amplify-fakecallapp1-dev-231802-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-fakecallapp1-dev-231802-deployment",
+      "UnauthRoleName": "amplify-fakecallapp1-dev-231802-unauthRole",
+      "StackName": "amplify-fakecallapp1-dev-231802",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:856218697005:stack/amplify-fakecallapp1-dev-231802/8df9c6b0-a375-11eb-9801-0ab6aeba6805",
+      "AmplifyAppId": "d3fdopzhx9m8hl"
+    },
+    "categories": {
+      "auth": {
+        "fakecallapp1f2f27ea9f2f27ea9": {
+          "facebookAppId": "268595634798117",
+          "googleClientId": "629424431095-fjsjlpl04ec42hnts5v894dbrirrm9s5.apps.googleusercontent.com",
+          "googleIos": "629424431095-to5ln2246gq526p1e7edt60iudtjf09f.apps.googleusercontent.com",
+          "amazonAppId": "amzn1.application-oa2-client.3cfe43e21d884803a315fa2361a5f0a2"
+        }
+      }
+    }
+  }
+}
