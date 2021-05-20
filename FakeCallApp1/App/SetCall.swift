@@ -20,7 +20,7 @@ class SetCall {
         let messageConfig = AWSPinpointTargetingDirectMessageConfiguration()
         let apnsMessage = AWSPinpointTargetingAPNSMessage()
         
-        addressConfig.channelType = AWSPinpointTargetingChannelType.apnsVoipSandbox
+        addressConfig.channelType = AWSPinpointTargetingChannelType.apnsVoip
         messageRequest?.addresses = [deviceToken! : addressConfig]
         
         apnsMessage?.apnsPushType = "voip"
@@ -39,17 +39,34 @@ class SetCall {
     
     func startCall() {
         guard deviceToken != nil else {
-            print("DeviceToken was nil")
+            let message = "No DeviceToken found internally"
+            NotificationCenter.default.post(name: .internalError, object: nil, userInfo: ["message" : message])
+            print(message)
             return
         }
+        
         let request = self.createMessageRequest()
 
         AWSPinpointTargeting.default().sendMessages(request) { (response, error) in
             switch response {
             case .some(let response):
-                print("'startCall' succeeded \(response)")
+                print("'sendMessages' request succeeded \(response)")
             case nil:
-                print("'startCall' failed \(String(describing: error))")
+                print("'sendMessages' request failed \(String(describing: error))")
+            }
+            
+            if let result = response?.messageResponse?.result {
+                for (_, value) in result {
+                    let messageResult: AWSPinpointTargetingMessageResult = value
+                    if messageResult.statusCode != NSNumber(200) {
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: .pinpointError, object: nil, userInfo: ["statusMessage" : messageResult.statusMessage as Any])
+                        }
+                        print("Pinpoint error occured \(messageResult)")
+                    } else {
+                        print("'startCall' request completely succeeded")
+                    }
+                }
             }
         }
     }

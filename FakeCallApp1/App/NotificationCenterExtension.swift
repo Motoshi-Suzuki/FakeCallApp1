@@ -11,4 +11,6 @@ extension Notification.Name {
     static let isSignedIn = Notification.Name("isSignedIn")
     static let callFinished = Notification.Name("callFinished")
     static let incomingCall = Notification.Name("incomingCall")
+    static let internalError = Notification.Name("internalError")
+    static let pinpointError = Notification.Name("pinpointError")
 }

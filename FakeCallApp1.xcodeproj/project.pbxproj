@@ -24,8 +24,6 @@
 		1D865286262445E5009F2014 /* Guest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D865285262445E5009F2014 /* Guest.storyboard */; };
 		1D86528A262446BD009F2014 /* GuestFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D865289262446BD009F2014 /* GuestFirstTableViewController.swift */; };
 		1D865292262484F3009F2014 /* GuestCallerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D865291262484F3009F2014 /* GuestCallerTableViewController.swift */; };
-		1D8E488C26295DA500BC5EEC /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D8E488A26295DA500BC5EEC /* sample.mp3 */; };
-		1D8E488D26295DA500BC5EEC /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1D8E488B26295DA500BC5EEC /* ringtone.mp3 */; };
 		1D8E48902629625A00BC5EEC /* GuestTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8E488F2629625A00BC5EEC /* GuestTimeTableViewController.swift */; };
 		1D8E48932629631100BC5EEC /* GuestSoundTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8E48922629631100BC5EEC /* GuestSoundTableViewController.swift */; };
 		1D9480802625619E000F8A9F /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D94807F2625619E000F8A9F /* CustomTableView.swift */; };
@@ -61,8 +59,6 @@
 		1D865285262445E5009F2014 /* Guest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Guest.storyboard; sourceTree = "<group>"; };
 		1D865289262446BD009F2014 /* GuestFirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestFirstTableViewController.swift; sourceTree = "<group>"; };
 		1D865291262484F3009F2014 /* GuestCallerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestCallerTableViewController.swift; sourceTree = "<group>"; };
-		1D8E488A26295DA500BC5EEC /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sample.mp3; path = Sound/sample.mp3; sourceTree = SOURCE_ROOT; };
-		1D8E488B26295DA500BC5EEC /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ringtone.mp3; path = Sound/ringtone.mp3; sourceTree = SOURCE_ROOT; };
 		1D8E488F2629625A00BC5EEC /* GuestTimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTimeTableViewController.swift; sourceTree = "<group>"; };
 		1D8E48922629631100BC5EEC /* GuestSoundTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestSoundTableViewController.swift; sourceTree = "<group>"; };
 		1D94807F2625619E000F8A9F /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
@@ -121,7 +117,6 @@
 				1D18D8F925BE632400E7EA92 /* LaunchScreen.storyboard */,
 				1D18D90425BE63F100E7EA92 /* FakeCallApp1.entitlements */,
 				1D18D8FC25BE632400E7EA92 /* Info.plist */,
-				1D8E488926295C5400BC5EEC /* Sound */,
 			);
 			path = FakeCallApp1;
 			sourceTree = "<group>";
@@ -158,15 +153,6 @@
 				1D8E48922629631100BC5EEC /* GuestSoundTableViewController.swift */,
 			);
 			path = Disuse;
-			sourceTree = "<group>";
-		};
-		1D8E488926295C5400BC5EEC /* Sound */ = {
-			isa = PBXGroup;
-			children = (
-				1D8E488B26295DA500BC5EEC /* ringtone.mp3 */,
-				1D8E488A26295DA500BC5EEC /* sample.mp3 */,
-			);
-			path = Sound;
 			sourceTree = "<group>";
 		};
 		1D8E489A2629641300BC5EEC /* GuestUser */ = {
@@ -286,9 +272,7 @@
 				1DB04A8F263252310002193C /* SignIn.storyboard in Resources */,
 				1D18D8FB25BE632400E7EA92 /* LaunchScreen.storyboard in Resources */,
 				1D865286262445E5009F2014 /* Guest.storyboard in Resources */,
-				1D8E488C26295DA500BC5EEC /* sample.mp3 in Resources */,
 				1D18D8F825BE632400E7EA92 /* Assets.xcassets in Resources */,
-				1D8E488D26295DA500BC5EEC /* ringtone.mp3 in Resources */,
 				21E7C33E25954C15B85357B9 /* amplifyconfiguration.json in Resources */,
 				DB564E8BF5B04CF09CACA490 /* awsconfiguration.json in Resources */,
 			);
@@ -506,12 +490,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeCallApp1/FakeCallApp1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = CS3KDAG7J6;
 				INFOPLIST_FILE = FakeCallApp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -527,12 +513,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeCallApp1/FakeCallApp1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = CS3KDAG7J6;
 				INFOPLIST_FILE = FakeCallApp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

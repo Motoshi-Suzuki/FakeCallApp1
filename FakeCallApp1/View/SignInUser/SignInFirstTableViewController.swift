@@ -26,6 +26,8 @@ class SignInFirstTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange(_:)), name: UserDefaults.didChangeNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reenableUIBUtton(_:)), name: .callFinished, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(alertInternalError(_:)), name: .internalError, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(alertPinpointError(_:)), name: .pinpointError, object: nil)
         
 //        if let sound = UserDefaults.standard.string(forKey: "soundName") {
 //            soundLabel.text = sound
@@ -96,11 +98,9 @@ class SignInFirstTableViewController: UITableViewController {
         let isConnected = UserDefaults.standard.bool(forKey: "isConnected")
         
         if isConnected == true {
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
                 self.setCall.startCall()
-                DispatchQueue.main.async {
-                    self.setCallButton.isEnabled = false
-                }
+                self.setCallButton.isEnabled = false
             }
         } else {
             self.alertWhenNoConnection()
@@ -111,6 +111,25 @@ class SignInFirstTableViewController: UITableViewController {
     func alertWhenNoConnection() {
         let alert = UIAlertController(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func alertInternalError(_ notification: Notification) {
+        let message = notification.userInfo?["message"] as? String
+        let alert = UIAlertController(title: "Your Request Failed", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.setCallButton.isEnabled = true
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // This method will be modified before official release
+    @objc private func alertPinpointError(_ notification: Notification) {
+        let statusMessage = notification.userInfo?["statusMessage"] as? String
+        let alert = UIAlertController(title: "Internal Server Error", message: statusMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            self.setCallButton.isEnabled = true
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     
