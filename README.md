@@ -16,7 +16,7 @@ Just tap the button, the native call UI of iOS appears with the native ringtone 
 
 # System Flow
 
-### Prerequisite
+### Background
 ![slide1 001](https://user-images.githubusercontent.com/84314868/119223365-f8649680-bb33-11eb-8504-67c5e2bd01d6.jpeg)
 
 
