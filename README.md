@@ -33,8 +33,11 @@ Just tap the button, the native call UI of iOS appears with the native ringtone 
 * iOS 10.0 or later
 
 # Download
+
+<img src="https://user-images.githubusercontent.com/84314868/122332717-dbc05080-cf71-11eb-9986-07aa672c6e47.PNG" width="320px">
+
 Beta version is now available in TestFlight.  
-You can download the app from the link below.
+You can download the app from this QR code or the link below.
 
 <https://testflight.apple.com/join/SCFk96GA>
 
