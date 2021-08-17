@@ -14,9 +14,20 @@
 		1D18D8FB25BE632400E7EA92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D18D8F925BE632400E7EA92 /* LaunchScreen.storyboard */; };
 		1D2ECA872642ED38001C7F58 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2ECA862642ED37001C7F58 /* NotificationCenterExtension.swift */; };
 		1D335AD226313BD200F834AD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D335AD126313BD200F834AD /* NavigationController.swift */; };
+		1D3EA82926C7AC5400D4AA58 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3EA82726C7AC5400D4AA58 /* Interface.storyboard */; };
+		1D3EA82B26C7AC5500D4AA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3EA82A26C7AC5500D4AA58 /* Assets.xcassets */; };
+		1D3EA83226C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1D3EA83126C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1D3EA83726C7AC5500D4AA58 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3EA83626C7AC5500D4AA58 /* HostingController.swift */; };
+		1D3EA83926C7AC5500D4AA58 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3EA83826C7AC5500D4AA58 /* ContentView.swift */; };
+		1D3EA83B26C7AC5500D4AA58 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3EA83A26C7AC5500D4AA58 /* ExtensionDelegate.swift */; };
+		1D3EA83D26C7AC5500D4AA58 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3EA83C26C7AC5500D4AA58 /* ComplicationController.swift */; };
+		1D3EA83F26C7AC5500D4AA58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3EA83E26C7AC5500D4AA58 /* Assets.xcassets */; };
+		1D3EA84226C7AC5500D4AA58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3EA84126C7AC5500D4AA58 /* Preview Assets.xcassets */; };
+		1D3EA84626C7AC5500D4AA58 /* FakeCallApp1-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1D3EA82526C7AC5400D4AA58 /* FakeCallApp1-Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1D3F18982628727B005F46C4 /* HandleUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3F18972628727B005F46C4 /* HandleUserDefaults.swift */; };
 		1D4B3DCC263AAA7F00DEFD0A /* SetCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4B3DCB263AAA7F00DEFD0A /* SetCall.swift */; };
 		1D68902B26428EA1001D26A7 /* GoToSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D68902A26428EA1001D26A7 /* GoToSettingsViewController.swift */; };
+		1D767B9F26C4F9C7005EE18F /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D767B9E26C4F9C7005EE18F /* Instance.swift */; };
 		1D7A6780264FFDDB00421498 /* SignInTimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7A677F264FFDDB00421498 /* SignInTimeTableViewController.swift */; };
 		1D7A67842650022700421498 /* GuestVoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7A67832650022700421498 /* GuestVoiceViewController.swift */; };
 		1D80D67225D1430600D55478 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D80D67125D1430600D55478 /* PlaySound.swift */; };
@@ -32,11 +43,57 @@
 		1DB04A8F263252310002193C /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB04A8E263252310002193C /* SignIn.storyboard */; };
 		1DB04A92263259710002193C /* SignInFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB04A91263259710002193C /* SignInFirstViewController.swift */; };
 		1DB04A9526325DC10002193C /* SignInFirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB04A9426325DC10002193C /* SignInFirstTableViewController.swift */; };
+		1DB489EA26C9E8C600B733FF /* IosConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB489E926C9E8C600B733FF /* IosConnectionViewModel.swift */; };
+		1DB489EC26C9EE0000B733FF /* WatchConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB489EB26C9EE0000B733FF /* WatchConnectionViewModel.swift */; };
 		1DC6C77325C7E36B00623167 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6C77225C7E36B00623167 /* CallManager.swift */; };
+		1DFC64E426CB5034007BF470 /* WatchInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC64E326CB5034007BF470 /* WatchInstance.swift */; };
+		1DFC64E626CBA4EA007BF470 /* CallFromWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFC64E526CBA4EA007BF470 /* CallFromWatch.swift */; };
 		21E7C33E25954C15B85357B9 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A7335289201E42D8A91705CA /* amplifyconfiguration.json */; };
 		5093765F110273FE60425075 /* Pods_FakeCallApp1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2526C6B8ABA1F6886C5B87DA /* Pods_FakeCallApp1.framework */; };
 		DB564E8BF5B04CF09CACA490 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D78A3B80C8344AD5AC6A1A41 /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1D3EA83326C7AC5500D4AA58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D18D8E325BE632400E7EA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D3EA83026C7AC5500D4AA58;
+			remoteInfo = "FakeCallApp1-Watch Extension";
+		};
+		1D3EA84426C7AC5500D4AA58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D18D8E325BE632400E7EA92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D3EA82426C7AC5400D4AA58;
+			remoteInfo = "FakeCallApp1-Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D3EA84726C7AC5500D4AA58 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				1D3EA84626C7AC5500D4AA58 /* FakeCallApp1-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D3EA84A26C7AC5500D4AA58 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1D3EA83226C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D005E23263528D700ADCBF1 /* HandleRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleRootVC.swift; sourceTree = "<group>"; };
@@ -49,9 +106,22 @@
 		1D18D90425BE63F100E7EA92 /* FakeCallApp1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakeCallApp1.entitlements; sourceTree = "<group>"; };
 		1D2ECA862642ED37001C7F58 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		1D335AD126313BD200F834AD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1D3EA82526C7AC5400D4AA58 /* FakeCallApp1-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FakeCallApp1-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3EA82826C7AC5400D4AA58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		1D3EA82A26C7AC5500D4AA58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D3EA82C26C7AC5500D4AA58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D3EA83126C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FakeCallApp1-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3EA83626C7AC5500D4AA58 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		1D3EA83826C7AC5500D4AA58 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D3EA83A26C7AC5500D4AA58 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		1D3EA83C26C7AC5500D4AA58 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		1D3EA83E26C7AC5500D4AA58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D3EA84126C7AC5500D4AA58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D3EA84326C7AC5500D4AA58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D3F18972628727B005F46C4 /* HandleUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleUserDefaults.swift; sourceTree = "<group>"; };
 		1D4B3DCB263AAA7F00DEFD0A /* SetCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCall.swift; sourceTree = "<group>"; };
 		1D68902A26428EA1001D26A7 /* GoToSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToSettingsViewController.swift; sourceTree = "<group>"; };
+		1D767B9E26C4F9C7005EE18F /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
 		1D7A677F264FFDDB00421498 /* SignInTimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTimeTableViewController.swift; sourceTree = "<group>"; };
 		1D7A67832650022700421498 /* GuestVoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestVoiceViewController.swift; sourceTree = "<group>"; };
 		1D80D67125D1430600D55478 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
@@ -67,7 +137,11 @@
 		1DB04A8E263252310002193C /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		1DB04A91263259710002193C /* SignInFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFirstViewController.swift; sourceTree = "<group>"; };
 		1DB04A9426325DC10002193C /* SignInFirstTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFirstTableViewController.swift; sourceTree = "<group>"; };
+		1DB489E926C9E8C600B733FF /* IosConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosConnectionViewModel.swift; sourceTree = "<group>"; };
+		1DB489EB26C9EE0000B733FF /* WatchConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectionViewModel.swift; sourceTree = "<group>"; };
 		1DC6C77225C7E36B00623167 /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
+		1DFC64E326CB5034007BF470 /* WatchInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchInstance.swift; sourceTree = "<group>"; };
+		1DFC64E526CBA4EA007BF470 /* CallFromWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallFromWatch.swift; sourceTree = "<group>"; };
 		2526C6B8ABA1F6886C5B87DA /* Pods_FakeCallApp1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeCallApp1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B81626098594164BBD122EC /* Pods-FakeCallApp1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeCallApp1.debug.xcconfig"; path = "Target Support Files/Pods-FakeCallApp1/Pods-FakeCallApp1.debug.xcconfig"; sourceTree = "<group>"; };
 		A7335289201E42D8A91705CA /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -85,6 +159,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D3EA82E26C7AC5500D4AA58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +174,8 @@
 			children = (
 				99013D9562EC4F43A51A7976 /* AmplifyConfig */,
 				1D18D8ED25BE632400E7EA92 /* FakeCallApp1 */,
+				1D3EA82626C7AC5400D4AA58 /* FakeCallApp1-Watch */,
+				1D3EA83526C7AC5500D4AA58 /* FakeCallApp1-Watch Extension */,
 				1D18D8EC25BE632400E7EA92 /* Products */,
 				82C09D1DE2F3A414709473D0 /* Pods */,
 				8E6058401C1352F185B5D9F2 /* Frameworks */,
@@ -103,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				1D18D8EB25BE632400E7EA92 /* FakeCallApp1.app */,
+				1D3EA82526C7AC5400D4AA58 /* FakeCallApp1-Watch.app */,
+				1D3EA83126C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +218,41 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1D3EA82626C7AC5400D4AA58 /* FakeCallApp1-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				1D3EA82726C7AC5400D4AA58 /* Interface.storyboard */,
+				1D3EA82A26C7AC5500D4AA58 /* Assets.xcassets */,
+				1D3EA82C26C7AC5500D4AA58 /* Info.plist */,
+			);
+			path = "FakeCallApp1-Watch";
+			sourceTree = "<group>";
+		};
+		1D3EA83526C7AC5500D4AA58 /* FakeCallApp1-Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1D3EA83A26C7AC5500D4AA58 /* ExtensionDelegate.swift */,
+				1D3EA83626C7AC5500D4AA58 /* HostingController.swift */,
+				1D3EA83826C7AC5500D4AA58 /* ContentView.swift */,
+				1DB489E926C9E8C600B733FF /* IosConnectionViewModel.swift */,
+				1DFC64E526CBA4EA007BF470 /* CallFromWatch.swift */,
+				1DFC64E326CB5034007BF470 /* WatchInstance.swift */,
+				1D3EA83C26C7AC5500D4AA58 /* ComplicationController.swift */,
+				1D3EA83E26C7AC5500D4AA58 /* Assets.xcassets */,
+				1D3EA84326C7AC5500D4AA58 /* Info.plist */,
+				1D3EA84026C7AC5500D4AA58 /* Preview Content */,
+			);
+			path = "FakeCallApp1-Watch Extension";
+			sourceTree = "<group>";
+		};
+		1D3EA84026C7AC5500D4AA58 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1D3EA84126C7AC5500D4AA58 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		1D5C2EE625C3F82B006C6CFB /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +262,8 @@
 				1D3F18972628727B005F46C4 /* HandleUserDefaults.swift */,
 				1D2ECA862642ED37001C7F58 /* NotificationCenterExtension.swift */,
 				1D4B3DCB263AAA7F00DEFD0A /* SetCall.swift */,
+				1D767B9E26C4F9C7005EE18F /* Instance.swift */,
+				1DB489EB26C9EE0000B733FF /* WatchConnectionViewModel.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -222,15 +344,51 @@
 				1D18D8E825BE632400E7EA92 /* Frameworks */,
 				1D18D8E925BE632400E7EA92 /* Resources */,
 				75FD5C498EE83BF363FA66A8 /* [CP] Embed Pods Frameworks */,
+				1D3EA84726C7AC5500D4AA58 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1D3EA84526C7AC5500D4AA58 /* PBXTargetDependency */,
 			);
 			name = FakeCallApp1;
 			productName = FakeCallApp1;
 			productReference = 1D18D8EB25BE632400E7EA92 /* FakeCallApp1.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1D3EA82426C7AC5400D4AA58 /* FakeCallApp1-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D3EA84E26C7AC5500D4AA58 /* Build configuration list for PBXNativeTarget "FakeCallApp1-Watch" */;
+			buildPhases = (
+				1D3EA82326C7AC5400D4AA58 /* Resources */,
+				1D3EA84A26C7AC5500D4AA58 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D3EA83426C7AC5500D4AA58 /* PBXTargetDependency */,
+			);
+			name = "FakeCallApp1-Watch";
+			productName = "FakeCallApp1-Watch";
+			productReference = 1D3EA82526C7AC5400D4AA58 /* FakeCallApp1-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		1D3EA83026C7AC5500D4AA58 /* FakeCallApp1-Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D3EA84D26C7AC5500D4AA58 /* Build configuration list for PBXNativeTarget "FakeCallApp1-Watch Extension" */;
+			buildPhases = (
+				1D3EA82D26C7AC5500D4AA58 /* Sources */,
+				1D3EA82E26C7AC5500D4AA58 /* Frameworks */,
+				1D3EA82F26C7AC5500D4AA58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FakeCallApp1-Watch Extension";
+			productName = "FakeCallApp1-Watch Extension";
+			productReference = 1D3EA83126C7AC5500D4AA58 /* FakeCallApp1-Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -238,11 +396,17 @@
 		1D18D8E325BE632400E7EA92 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					1D18D8EA25BE632400E7EA92 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					1D3EA82426C7AC5400D4AA58 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					1D3EA83026C7AC5500D4AA58 = {
+						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
 			};
@@ -260,6 +424,8 @@
 			projectRoot = "";
 			targets = (
 				1D18D8EA25BE632400E7EA92 /* FakeCallApp1 */,
+				1D3EA82426C7AC5400D4AA58 /* FakeCallApp1-Watch */,
+				1D3EA83026C7AC5500D4AA58 /* FakeCallApp1-Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -275,6 +441,24 @@
 				1D18D8F825BE632400E7EA92 /* Assets.xcassets in Resources */,
 				21E7C33E25954C15B85357B9 /* amplifyconfiguration.json in Resources */,
 				DB564E8BF5B04CF09CACA490 /* awsconfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D3EA82326C7AC5400D4AA58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3EA82B26C7AC5500D4AA58 /* Assets.xcassets in Resources */,
+				1D3EA82926C7AC5400D4AA58 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D3EA82F26C7AC5500D4AA58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3EA84226C7AC5500D4AA58 /* Preview Assets.xcassets in Resources */,
+				1D3EA83F26C7AC5500D4AA58 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +515,7 @@
 				1D2ECA872642ED38001C7F58 /* NotificationCenterExtension.swift in Sources */,
 				1D865292262484F3009F2014 /* GuestCallerTableViewController.swift in Sources */,
 				1D4B3DCC263AAA7F00DEFD0A /* SetCall.swift in Sources */,
+				1DB489EC26C9EE0000B733FF /* WatchConnectionViewModel.swift in Sources */,
 				1DB04A9526325DC10002193C /* SignInFirstTableViewController.swift in Sources */,
 				1D18D8EF25BE632400E7EA92 /* AppDelegate.swift in Sources */,
 				1D18D8F125BE632400E7EA92 /* SceneDelegate.swift in Sources */,
@@ -343,6 +528,7 @@
 				1D7A6780264FFDDB00421498 /* SignInTimeTableViewController.swift in Sources */,
 				1D68902B26428EA1001D26A7 /* GoToSettingsViewController.swift in Sources */,
 				1D335AD226313BD200F834AD /* NavigationController.swift in Sources */,
+				1D767B9F26C4F9C7005EE18F /* Instance.swift in Sources */,
 				1D96AACA264FD0F400DCB313 /* PrivacyPolicyViewController.swift in Sources */,
 				1DB04A92263259710002193C /* SignInFirstViewController.swift in Sources */,
 				1DC6C77325C7E36B00623167 /* CallManager.swift in Sources */,
@@ -352,7 +538,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D3EA82D26C7AC5500D4AA58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3EA83926C7AC5500D4AA58 /* ContentView.swift in Sources */,
+				1D3EA83D26C7AC5500D4AA58 /* ComplicationController.swift in Sources */,
+				1DFC64E426CB5034007BF470 /* WatchInstance.swift in Sources */,
+				1DB489EA26C9E8C600B733FF /* IosConnectionViewModel.swift in Sources */,
+				1D3EA83726C7AC5500D4AA58 /* HostingController.swift in Sources */,
+				1DFC64E626CBA4EA007BF470 /* CallFromWatch.swift in Sources */,
+				1D3EA83B26C7AC5500D4AA58 /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1D3EA83426C7AC5500D4AA58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D3EA83026C7AC5500D4AA58 /* FakeCallApp1-Watch Extension */;
+			targetProxy = 1D3EA83326C7AC5500D4AA58 /* PBXContainerItemProxy */;
+		};
+		1D3EA84526C7AC5500D4AA58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D3EA82426C7AC5400D4AA58 /* FakeCallApp1-Watch */;
+			targetProxy = 1D3EA84426C7AC5500D4AA58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1D18D8F925BE632400E7EA92 /* LaunchScreen.storyboard */ = {
@@ -361,6 +574,14 @@
 				1D18D8FA25BE632400E7EA92 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1D3EA82726C7AC5400D4AA58 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D3EA82826C7AC5400D4AA58 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -490,7 +711,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeCallApp1/FakeCallApp1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = CS3KDAG7J6;
 				INFOPLIST_FILE = FakeCallApp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,7 +734,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FakeCallApp1/FakeCallApp1.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = CS3KDAG7J6;
 				INFOPLIST_FILE = FakeCallApp1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,6 +746,102 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1D3EA84826C7AC5500D4AA58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = CS3KDAG7J6;
+				IBSC_MODULE = FakeCallApp1_Watch_Extension;
+				INFOPLIST_FILE = "FakeCallApp1-Watch/Info.plist";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		1D3EA84926C7AC5500D4AA58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = CS3KDAG7J6;
+				IBSC_MODULE = FakeCallApp1_Watch_Extension;
+				INFOPLIST_FILE = "FakeCallApp1-Watch/Info.plist";
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		1D3EA84B26C7AC5500D4AA58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_ASSET_PATHS = "\"FakeCallApp1-Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CS3KDAG7J6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "FakeCallApp1-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		1D3EA84C26C7AC5500D4AA58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_ASSET_PATHS = "\"FakeCallApp1-Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = CS3KDAG7J6;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "FakeCallApp1-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.motoshi-suzuki.FakeCallApp1.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -545,6 +862,24 @@
 			buildConfigurations = (
 				1D18D90025BE632400E7EA92 /* Debug */,
 				1D18D90125BE632400E7EA92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D3EA84D26C7AC5500D4AA58 /* Build configuration list for PBXNativeTarget "FakeCallApp1-Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D3EA84B26C7AC5500D4AA58 /* Debug */,
+				1D3EA84C26C7AC5500D4AA58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D3EA84E26C7AC5500D4AA58 /* Build configuration list for PBXNativeTarget "FakeCallApp1-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D3EA84826C7AC5500D4AA58 /* Debug */,
+				1D3EA84926C7AC5500D4AA58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

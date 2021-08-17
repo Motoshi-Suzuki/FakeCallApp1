@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
     var pinpoint: AWSPinpoint?
 //    let playSound = PlaySound()
     let handleUserDefaults = HandleUserDefaults()
+    let watchConnectivity = WatchConnectionViewModel()
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -74,23 +75,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
         }
     }
     
-    // get DeviceToken and send it to Pinpoint
+    // get DeviceToken and send it to Pinpoint and Watch app.
     func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
         let deviceToken: Data = pushCredentials.token
-        let deviceTokenString = deviceToken.map { String(format: "%.2hhx", $0) }.joined()
-        let savedDeviceToken = UserDefaults.standard.string(forKey: "deviceToken")
+        SharedInstance.deviceToken = deviceToken.map { String(format: "%.2hhx", $0) }.joined()
+//        let savedDeviceToken = UserDefaults.standard.string(forKey: "deviceToken")
         
         guard deviceToken.count > 0 else {
+            print("Could not get DeviceToken.")
             return
         }
+        // Send DeviceToken to Pinpoint.
         pinpoint?.notificationManager.interceptDidRegisterForRemoteNotifications(withDeviceToken: deviceToken)
-        print("DeviceToken: \(deviceTokenString)")
+        print("DeviceToken: \(SharedInstance.deviceToken)")
         
-        if deviceTokenString == savedDeviceToken {
-            print("DeviceToken has not changed")
+//        if deviceTokenString == savedDeviceToken {
+//            print("DeviceToken has not changed")
+//        } else {
+//            UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
+//            print("New DeviceToken has been successfully saved locally")
+//        }
+        
+        // Send DeviceToken to Watch app.
+        if self.watchConnectivity.session.activationState == .activated {
+            let deviceTokenInfo: [String : Any] = ["DeviceToken" : SharedInstance.deviceToken]
+            self.watchConnectivity.session.transferUserInfo(deviceTokenInfo)
+            print("DeviceToken has sent to Watch app.")
         } else {
-            UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
-            print("New DeviceToken has been successfully saved locally")
+            print("Session of WatchConnectivity is not activated.", "\n\(self.watchConnectivity.session.activationState)")
         }
     }
     
