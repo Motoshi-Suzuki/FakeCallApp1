@@ -1,21 +1,25 @@
 {
   "images" : [
     {
+      "filename" : "AppIcon7-Watch.52.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : "<=145"
     },
     {
+      "filename" : "AppIcon7-Watch.58.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "filename" : "AppIcon7-Watch.58-1.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">145"
     },
     {
+      "filename" : "AppIcon7-Watch.64.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

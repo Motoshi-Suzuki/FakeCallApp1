@@ -3,9 +3,21 @@
     {
       "idiom" : "watch",
       "scale" : "2x",
+      "screen-width" : "<=145"
+    },
+    {
+      "filename" : "AppIcon7-Watch.40.png",
+      "idiom" : "watch",
+      "scale" : "2x",
       "screen-width" : ">161"
     },
     {
+      "idiom" : "watch",
+      "scale" : "2x",
+      "screen-width" : ">145"
+    },
+    {
+      "filename" : "AppIcon7-Watch.44.png",
       "idiom" : "watch",
       "scale" : "2x",
       "screen-width" : ">183"

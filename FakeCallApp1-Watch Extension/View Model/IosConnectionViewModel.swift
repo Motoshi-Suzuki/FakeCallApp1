@@ -23,19 +23,19 @@ extension IosConnectionViewModel: WCSessionDelegate {
         if let error = error {
             print(error.localizedDescription)
         } else {
-            print("Activation for WatchConnectivity has completed.")
+            print("Activation for WatchOS's WatchConnectivity has completed.")
         }
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
-        guard let deviceToken = userInfo["DeviceToken"] as? String else {
+        guard let info = userInfo["UserInfo"] else {
             return
         }
-        UserDefaults.standard.set(deviceToken, forKey: "deviceToken")
-        WatchInstance.deviceToken = deviceToken
+        print("---Watch app received the UserInfo.---", "\n\(info)")
+        
         DispatchQueue.main.async {
-            NotificationCenter.default.post(name: .gotDeviceToken, object: nil)
+            NotificationCenter.default.post(name: .callFinished, object: nil)
         }
-        print("---Watch app has got DeviceToken successfully.---", "\nDeviceToken: \(deviceToken)")
     }
+    
 }

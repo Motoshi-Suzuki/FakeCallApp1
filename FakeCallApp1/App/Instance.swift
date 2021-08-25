@@ -9,4 +9,5 @@ import Foundation
 
 struct SharedInstance {
     static var deviceToken: String = "No DeviceToken"
+    static var triggerdFromWatch = false
 }

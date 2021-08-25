@@ -11,10 +11,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-        if let savedDeviceToken = UserDefaults.standard.string(forKey: "deviceToken") {
-            WatchInstance.deviceToken = savedDeviceToken
-            print("---DeviceToken has already saved for Watch app.---", "\nSaved DeviceToken: \(WatchInstance.deviceToken)")
-        }
+        _ = IosConnectionViewModel()
     }
 
     func applicationDidBecomeActive() {

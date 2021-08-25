@@ -77,33 +77,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
     
     // get DeviceToken and send it to Pinpoint and Watch app.
     func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
-        let deviceToken: Data = pushCredentials.token
-        SharedInstance.deviceToken = deviceToken.map { String(format: "%.2hhx", $0) }.joined()
-//        let savedDeviceToken = UserDefaults.standard.string(forKey: "deviceToken")
         
+        let deviceToken: Data = pushCredentials.token
         guard deviceToken.count > 0 else {
             print("Could not get DeviceToken.")
             return
         }
+        
+        SharedInstance.deviceToken = deviceToken.map { String(format: "%.2hhx", $0) }.joined()
+        UserDefaults.standard.set(SharedInstance.deviceToken, forKey: "deviceToken")
+        
         // Send DeviceToken to Pinpoint.
         pinpoint?.notificationManager.interceptDidRegisterForRemoteNotifications(withDeviceToken: deviceToken)
         print("DeviceToken: \(SharedInstance.deviceToken)")
-        
-//        if deviceTokenString == savedDeviceToken {
-//            print("DeviceToken has not changed")
-//        } else {
-//            UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
-//            print("New DeviceToken has been successfully saved locally")
-//        }
-        
-        // Send DeviceToken to Watch app.
-        if self.watchConnectivity.session.activationState == .activated {
-            let deviceTokenInfo: [String : Any] = ["DeviceToken" : SharedInstance.deviceToken]
-            self.watchConnectivity.session.transferUserInfo(deviceTokenInfo)
-            print("DeviceToken has sent to Watch app.")
-        } else {
-            print("Session of WatchConnectivity is not activated.", "\n\(self.watchConnectivity.session.activationState)")
-        }
     }
     
     // Called when received Voip Push
@@ -208,8 +194,7 @@ extension AppDelegate: CXProviderDelegate {
     // called after user accepted incoming call
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         NotificationCenter.default.post(name: .incomingCall, object: nil)
-        print("CXAnswerCallAction")
-        print(action)
+        print("User accepted incoming call.")
 //        playSound.playTalkingSound()
         self.configureAudioSession()
         action.fulfill()
@@ -220,7 +205,20 @@ extension AppDelegate: CXProviderDelegate {
 //        playSound.stopTalkingSound()
         CallManager.shared.removeCall(uuid: action.callUUID)
         NotificationCenter.default.post(name: .callFinished, object: nil)
+        
+        // Send message to Watch app.
+        if SharedInstance.triggerdFromWatch != false {
+            if self.watchConnectivity.session.activationState == .activated {
+                let info: [String : Any] = ["UserInfo" : "Call Finished"]
+                self.watchConnectivity.session.transferUserInfo(info)
+            } else {
+                print("Session is not activated.")
+            }
+            SharedInstance.triggerdFromWatch = false
+        }
+        
         action.fulfill()
+        print("---Call Finished---")
     }
 
 }

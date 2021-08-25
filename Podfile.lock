@@ -30,6 +30,7 @@ PODS:
   - AWSPluginsCore (1.7.1):
     - Amplify (= 1.7.1)
     - AWSCore (~> 2.23.0)
+  - LicensePlist (3.13.0)
 
 DEPENDENCIES:
   - Amplify
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - AmplifyPlugins/AWSPinpointAnalyticsPlugin
   - AWSMobileClient
   - AWSPinpoint
+  - LicensePlist
 
 SPEC REPOS:
   trunk:
@@ -49,6 +51,7 @@ SPEC REPOS:
     - AWSMobileClient
     - AWSPinpoint
     - AWSPluginsCore
+    - LicensePlist
 
 SPEC CHECKSUMS:
   Amplify: 465c8699e8740e61b95f4ae41029847170a51e6d
@@ -60,7 +63,8 @@ SPEC CHECKSUMS:
   AWSMobileClient: bdfc148fc11b846331f2bec4a7063c95e66c329e
   AWSPinpoint: 72c99dbf5c37464f87cbf4515d6d027c996ddc96
   AWSPluginsCore: fedb93d69caee9bf25255023f9f9551082d9477a
+  LicensePlist: 4e87d3438e03ae2d368ff5bd85344aa03ca722eb
 
-PODFILE CHECKSUM: 272e5bf637e6c444b1232319d54085680841a86f
+PODFILE CHECKSUM: afe19f36f76d4a8fdbfbda789665f31ab382748a
 
 COCOAPODS: 1.10.0

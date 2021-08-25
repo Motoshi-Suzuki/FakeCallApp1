@@ -1,0 +1,48 @@
+name: Amplify, nameSpecified: 
+body: 
+                   …
+version: 1.7.1
+
+name: AmplifyPlugins, nameSpecified: 
+body: 
+                   …
+version: 1.7.1
+
+name: AWSAuthCore, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSCognitoIdentityProvider, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSCognitoIdentityProviderASF, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSCore, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSMobileClient, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSPinpoint, nameSpecified: 
+body: The AWS Mobile SDK f…
+version: 2.23.3
+
+name: AWSPluginsCore, nameSpecified: 
+body: 
+                   …
+version: 1.7.1
+
+name: LicensePlist, nameSpecified: 
+body: MIT License
+
+Copyrig…
+version: 3.13.0
+
+add-version-numbers: false
+
+LicensePlist Version: 3.13.0

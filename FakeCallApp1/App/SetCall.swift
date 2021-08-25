@@ -10,7 +10,7 @@ import AWSPinpoint
 
 class SetCall {
         
-    func createMessageRequest() -> AWSPinpointTargetingSendMessagesRequest {
+    func createMessageRequest(deviceToken: String) -> AWSPinpointTargetingSendMessagesRequest {
         
         let sendMessageRequest = AWSPinpointTargetingSendMessagesRequest()!
         let messageRequest = AWSPinpointTargetingMessageRequest()
@@ -18,8 +18,8 @@ class SetCall {
         let messageConfig = AWSPinpointTargetingDirectMessageConfiguration()
         let apnsMessage = AWSPinpointTargetingAPNSMessage()
         
-        addressConfig.channelType = AWSPinpointTargetingChannelType.apnsVoipSandbox
-        messageRequest?.addresses = [SharedInstance.deviceToken : addressConfig]
+        addressConfig.channelType = AWSPinpointTargetingChannelType.apnsVoip
+        messageRequest?.addresses = [deviceToken : addressConfig]
         
         apnsMessage?.apnsPushType = "voip"
         apnsMessage?.action = .openApp
@@ -35,7 +35,7 @@ class SetCall {
         return sendMessageRequest
     }
     
-    func startCall() {
+    func startCall(deviceToken: String) {
         guard SharedInstance.deviceToken != "No DeviceToken" else {
             let message = "No DeviceToken found internally"
             NotificationCenter.default.post(name: .internalError, object: nil, userInfo: ["message" : message])
@@ -43,7 +43,7 @@ class SetCall {
             return
         }
         
-        let request = self.createMessageRequest()
+        let request = self.createMessageRequest(deviceToken: deviceToken)
 
         AWSPinpointTargeting.default().sendMessages(request) { (response, error) in
             switch response {

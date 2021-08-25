@@ -10,6 +10,7 @@ target 'FakeCallApp1' do
   pod 'AmplifyPlugins/AWSPinpointAnalyticsPlugin'
   pod  'AWSPinpoint'
   pod  'AWSMobileClient'
+  pod 'LicensePlist'
 
   # Pods for FakeCallApp1
 

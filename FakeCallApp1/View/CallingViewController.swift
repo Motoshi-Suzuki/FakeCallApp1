@@ -29,6 +29,11 @@ class CallingViewController: UIViewController {
     private var timer: Timer?
     private var elapsedTime: Double = 0.0
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dismissCallingView), name: .callFinished, object: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -231,6 +236,7 @@ class CallingViewController: UIViewController {
     
     @IBAction func hangUpButton(_ sender: Any) {
         hangUpButton.isEnabled = false
+        
         if let timer = timer {
             timer.invalidate()
         }
@@ -242,7 +248,9 @@ class CallingViewController: UIViewController {
         } else {
             print("failed to end calling")
         }
-        
+    }
+    
+    @objc private func dismissCallingView() {
         self.dismiss(animated: true, completion: nil)
     }
     

@@ -60,7 +60,7 @@ class SignInFirstTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
-            return 4
+            return 2
         case 1:
             return 1
         default:
@@ -68,14 +68,18 @@ class SignInFirstTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 100
+            return 180
         case 1:
-            return 18
+            return 0
         default:
-            return 18
+            return 0
         }
     }
     
@@ -99,7 +103,7 @@ class SignInFirstTableViewController: UITableViewController {
         
         if isConnected == true {
             DispatchQueue.main.async {
-                self.setCall.startCall()
+                self.setCall.startCall(deviceToken: SharedInstance.deviceToken)
                 self.setCallButton.isEnabled = false
             }
         } else {

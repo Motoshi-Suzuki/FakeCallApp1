@@ -31,7 +31,21 @@ extension WatchConnectionViewModel: WCSessionDelegate {
         if let error = error {
             print(error.localizedDescription)
         } else {
-            print("Activation of iOS app has completed.")
+            print("Activation for iOS's WatchConnectivity has completed.")
+        }
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        guard let message = message["Message"] else {
+            return
+        }
+        print("---iOS app received the message.---", "\n\(message)")
+        
+        SharedInstance.triggerdFromWatch = true
+        
+        if let savedToken = UserDefaults.standard.string(forKey: "deviceToken") {
+            let call = SetCall()
+            call.startCall(deviceToken: savedToken)
         }
     }
 }

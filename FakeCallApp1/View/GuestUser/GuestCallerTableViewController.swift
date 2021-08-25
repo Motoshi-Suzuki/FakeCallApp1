@@ -59,6 +59,10 @@ class GuestCallerTableViewController: UITableViewController, UITextFieldDelegate
         return 1
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
