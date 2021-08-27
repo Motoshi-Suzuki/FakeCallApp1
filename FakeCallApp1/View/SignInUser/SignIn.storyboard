@@ -368,21 +368,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="5iA-84-yUQ"/>
                     <connections>
-                        <outlet property="addCallButton" destination="hiz-Gc-WXf" id="yu8-GA-fL7"/>
-                        <outlet property="addCallLabel" destination="6qt-Py-TBE" id="xvj-Rg-yhW"/>
-                        <outlet property="audioButton" destination="p9X-GJ-B3c" id="4CB-Tw-Xuv"/>
-                        <outlet property="audioLabel" destination="ihB-kv-ghw" id="KUv-BP-QHV"/>
                         <outlet property="callerNameLabel" destination="UeU-pq-8wd" id="Bk3-Dv-xPd"/>
-                        <outlet property="contactsButton" destination="I9I-Pj-VBP" id="TzD-nM-qe3"/>
-                        <outlet property="contactsLabel" destination="O0v-Jc-OR8" id="Q3i-EH-YBM"/>
-                        <outlet property="faceTimeButton" destination="gte-FP-6ru" id="VnC-0I-tiF"/>
-                        <outlet property="faceTimeLabel" destination="uN6-lc-ciN" id="8xF-cZ-mmc"/>
                         <outlet property="hangUpButton" destination="cgu-EK-RAU" id="eRh-bO-4Ma"/>
-                        <outlet property="keypadButton" destination="i2g-Dm-p92" id="2zm-Bz-e0O"/>
-                        <outlet property="keypadLabel" destination="iGe-gG-5HQ" id="g3H-eS-azv"/>
                         <outlet property="minuteLabel" destination="g98-HS-qco" id="tw9-Ys-Lyg"/>
-                        <outlet property="muteButton" destination="9aY-RI-kft" id="oP1-g5-zrN"/>
-                        <outlet property="muteLabel" destination="w7c-K2-Czh" id="Zdm-nu-rbj"/>
                         <outlet property="secondLabel" destination="bQ7-eM-euf" id="I0W-rn-k9p"/>
                         <outlet property="timerLabel" destination="AGc-RG-VYw" id="20P-Gh-aT7"/>
                     </connections>
