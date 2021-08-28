@@ -13,18 +13,6 @@ class CallingViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var minuteLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
-//    @IBOutlet weak var muteButton: UIButton!
-//    @IBOutlet weak var keypadButton: UIButton!
-//    @IBOutlet weak var audioButton: UIButton!
-//    @IBOutlet weak var addCallButton: UIButton!
-//    @IBOutlet weak var faceTimeButton: UIButton!
-//    @IBOutlet weak var contactsButton: UIButton!
-//    @IBOutlet weak var muteLabel: UILabel!
-//    @IBOutlet weak var keypadLabel: UILabel!
-//    @IBOutlet weak var audioLabel: UILabel!
-//    @IBOutlet weak var addCallLabel: UILabel!
-//    @IBOutlet weak var faceTimeLabel: UILabel!
-//    @IBOutlet weak var contactsLabel: UILabel!
     @IBOutlet weak var hangUpButton: UIButton!
     private var timer: Timer?
     private var elapsedTime: Double = 0.0
@@ -40,21 +28,38 @@ class CallingViewController: UIViewController {
         let screenWidth: CGFloat = view.frame.width
         let screenHeight: CGFloat = view.frame.height
         
-        // Create blurView
+        // blurView
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = view.frame
         view.insertSubview(blurView, aboveSubview: view)
         
-        // Create Caller Name Label
+        // Icon Image View
+        let iconImageView = UIImageView()
+        iconImageView.frame.size = CGSize(width: 150, height: 150)
+        iconImageView.frame.origin = CGPoint(x: (screenWidth - iconImageView.frame.size.width) / 2, y: screenHeight * 0.11)
+        iconImageView.layer.cornerRadius = iconImageView.frame.size.width / 2
+        iconImageView.layer.borderWidth = 1.0
+        iconImageView.layer.borderColor = UIColor.white.cgColor
+        blurView.contentView.addSubview(iconImageView)
+        
+        // Default Icon
+        let defaultIconView = UIImageView(image: UIImage(systemName: "person.fill"))
+        defaultIconView.frame.size = CGSize(width: 100, height: 100)
+        defaultIconView.frame.origin = CGPoint(x: (iconImageView.frame.origin.x + iconImageView.frame.width / 2) - defaultIconView.frame.width / 2, y: (iconImageView.frame.origin.y + iconImageView.frame.height / 2) - defaultIconView.frame.height / 2)
+        defaultIconView.contentMode = .scaleAspectFit
+        defaultIconView.tintColor = .white
+        blurView.contentView.addSubview(defaultIconView)
+        
+        // Caller Name Label
         if let caller = UserDefaults.standard.string(forKey: "caller") {
             callerNameLabel.text = caller
         }
         callerNameLabel.frame.size = CGSize(width: screenWidth - 50, height: 40)
-        callerNameLabel.frame.origin = CGPoint(x: (screenWidth - callerNameLabel.frame.width) / 2, y: screenHeight * 0.12)
+        callerNameLabel.frame.origin = CGPoint(x: (screenWidth - callerNameLabel.frame.width) / 2, y: iconImageView.frame.origin.y + iconImageView.frame.height + 15)
         blurView.contentView.addSubview(callerNameLabel)
         
-        // Create Timer Label
+        // Timer Label
         timerLabel.frame.size = CGSize(width: 5, height: 30)
         timerLabel.frame.origin = CGPoint(x: (screenWidth - timerLabel.frame.width) / 2, y: callerNameLabel.frame.origin.y + callerNameLabel.frame.height)
         blurView.contentView.addSubview(timerLabel)
@@ -68,144 +73,12 @@ class CallingViewController: UIViewController {
         secondLabel.frame.origin = CGPoint(x: timerLabel.frame.origin.x + timerLabel.frame.width + 1, y: timerLabel.frame.origin.y)
         blurView.contentView.addSubview(secondLabel)
         
-        // Buttons, ButtonImages and Labels in the first row
-        let buttonSize = CGSize(width: 75, height: 75)
-//        let labelSize = CGSize(width: buttonSize.width, height: 34)
-//        let buttonImageSize = CGSize(width: 40, height: 40)
-//        let buttonImageWidthMargin = (buttonSize.width - buttonImageSize.width) / 2
-//        let buttonImageHeightMargin = (buttonSize.height - buttonImageSize.height) / 2
-        let roundOff = buttonSize.width / 2
-//        let firstRowMarginFromCentre = screenHeight * 0.00615
-        let buttonImageColor = UIColor.white
-        let buttonImageContentMode = UIImageView.ContentMode.scaleAspectFit
-        
-        // keypad Button
-//        keypadButton.frame.size = buttonSize
-//        keypadButton.frame.origin = CGPoint(x: screenWidth / 2 - buttonSize.width / 2, y: screenHeight / 2 - (buttonSize.height + labelSize.height + firstRowMarginFromCentre))
-//        keypadButton.layer.cornerRadius = roundOff
-//        keypadButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(keypadButton)
-//
-//        let keypadImage = UIImage(named: "keypad4")
-//        let keypadImageView = UIImageView(image: keypadImage)
-//        keypadImageView.frame.size = buttonImageSize
-//        keypadImageView.frame.origin = CGPoint(x: keypadButton.frame.origin.x + buttonImageWidthMargin, y: keypadButton.frame.origin.y + buttonImageHeightMargin)
-//        keypadImageView.tintColor = buttonImageColor
-//        keypadImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(keypadImageView)
-        
-        // mute Button
-//        muteButton.frame.size = buttonSize
-//        muteButton.frame.origin = CGPoint(x: keypadButton.frame.origin.x - (buttonSize.width + screenWidth * 0.079), y: keypadButton.frame.origin.y)
-//        muteButton.layer.cornerRadius = roundOff
-//        muteButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(muteButton)
-//
-//        let muteImage = UIImage(systemName: "mic.slash.fill")
-//        let muteImageView = UIImageView(image: muteImage)
-//        muteImageView.frame.size = buttonImageSize
-//        muteImageView.frame.origin = CGPoint(x: muteButton.frame.origin.x + buttonImageWidthMargin, y: muteButton.frame.origin.y + buttonImageHeightMargin)
-//        muteImageView.tintColor = buttonImageColor
-//        muteImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(muteImageView)
-        
-        // audio Button
-//        audioButton.frame.size = buttonSize
-//        audioButton.frame.origin = CGPoint(x: keypadButton.frame.origin.x + buttonSize.width + screenWidth * 0.079, y: keypadButton.frame.origin.y)
-//        audioButton.layer.cornerRadius = roundOff
-//        audioButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(audioButton)
-        
-        // Size of audioImage is bigger than the others
-//        let audioImage = UIImage(systemName: "speaker.wave.3.fill")
-//        let audioImageView = UIImageView(image: audioImage)
-//        audioImageView.frame.size = CGSize(width: 45, height: 45)
-//        audioImageView.frame.origin = CGPoint(x: audioButton.frame.origin.x + (buttonSize.width - audioImageView.frame.width) / 2, y: audioButton.frame.origin.y + (buttonSize.height - audioImageView.frame.height) / 2)
-//        audioImageView.tintColor = buttonImageColor
-//        audioImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(audioImageView)
-        
-        // Labels in the first row
-//        keypadLabel.frame.size = labelSize
-//        keypadLabel.frame.origin = CGPoint(x: keypadButton.frame.origin.x, y: keypadButton.frame.origin.y + buttonSize.height)
-//        blurView.contentView.addSubview(keypadLabel)
-//
-//        muteLabel.frame.size = labelSize
-//        muteLabel.frame.origin = CGPoint(x: muteButton.frame.origin.x, y: keypadLabel.frame.origin.y)
-//        blurView.contentView.addSubview(muteLabel)
-//
-//        audioLabel.frame.size = labelSize
-//        audioLabel.frame.origin = CGPoint(x: audioButton.frame.origin.x, y: keypadLabel.frame.origin.y)
-//        blurView.contentView.addSubview(audioLabel)
-        
-        // Buttons, ButtonImages and Labels in the second row
-        // FaceTime Button
-//        faceTimeButton.frame.size = buttonSize
-//        faceTimeButton.frame.origin = CGPoint(x: keypadButton.frame.origin.x, y: screenHeight / 2 + firstRowMarginFromCentre * 1.6)
-//        faceTimeButton.layer.cornerRadius = roundOff
-//        faceTimeButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(faceTimeButton)
-        
-        // Size of faceTimeImage is bigger that the others
-//        let faceTimeImage = UIImage(systemName: "questionmark.video.fill")
-//        let faceTimeImageView = UIImageView(image: faceTimeImage)
-//        faceTimeImageView.frame.size = CGSize(width: 45, height: 45)
-//        faceTimeImageView.frame.origin = CGPoint(x: faceTimeButton.frame.origin.x + (buttonSize.width - faceTimeImageView.frame.width) / 2, y: faceTimeButton.frame.origin.y + (buttonSize.height - faceTimeImageView.frame.height) / 2)
-//        faceTimeImageView.tintColor = buttonImageColor
-//        faceTimeImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(faceTimeImageView)
-        
-        // add call Button
-//        addCallButton.frame.size = buttonSize
-//        addCallButton.frame.origin = CGPoint(x: muteButton.frame.origin.x, y: faceTimeButton.frame.origin.y)
-//        addCallButton.layer.cornerRadius = roundOff
-//        addCallButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(addCallButton)
-        
-        // Size of audioImage is smaller than the others
-//        let addCallImage = UIImage(systemName: "plus")
-//        let addCallImageView = UIImageView(image: addCallImage)
-//        addCallImageView.frame.size = CGSize(width: 35, height: 35)
-//        addCallImageView.frame.origin = CGPoint(x: addCallButton.frame.origin.x + (buttonSize.width - addCallImageView.frame.width) / 2, y: addCallButton.frame.origin.y + (buttonSize.height - addCallImageView.frame.height) / 2)
-//        addCallImageView.tintColor = buttonImageColor
-//        addCallImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(addCallImageView)
-        
-        // contacts Button
-//        contactsButton.frame.size = buttonSize
-//        contactsButton.frame.origin = CGPoint(x: audioButton.frame.origin.x, y: faceTimeButton.frame.origin.y)
-//        contactsButton.layer.cornerRadius = roundOff
-//        contactsButton.showsTouchWhenHighlighted = true
-//        blurView.contentView.addSubview(contactsButton)
-        
-        // Size of contactsImage is smaller than the others
-//        let contactsImage = UIImage(systemName: "person.crop.circle")
-//        let contactsImageView = UIImageView(image: contactsImage)
-//        contactsImageView.frame.size = CGSize(width: 37, height: 37)
-//        contactsImageView.frame.origin = CGPoint(x: contactsButton.frame.origin.x + (buttonSize.width - contactsImageView.frame.width) / 2, y: contactsButton.frame.origin.y + (buttonSize.height - contactsImageView.frame.height) / 2)
-//        contactsImageView.tintColor = buttonImageColor
-//        contactsImageView.contentMode = buttonImageContentMode
-//        blurView.contentView.addSubview(contactsImageView)
-        
-        // Labels in the second row
-//        faceTimeLabel.frame.size = labelSize
-//        faceTimeLabel.frame.origin = CGPoint(x: keypadButton.frame.origin.x, y: faceTimeButton.frame.origin.y + buttonSize.height)
-//        blurView.contentView.addSubview(faceTimeLabel)
-//
-//        addCallLabel.frame.size = labelSize
-//        addCallLabel.frame.origin = CGPoint(x: muteButton.frame.origin.x, y: faceTimeLabel.frame.origin.y)
-//        blurView.contentView.addSubview(addCallLabel)
-//
-//        contactsLabel.frame.size = labelSize
-//        contactsLabel.frame.origin = CGPoint(x: audioButton.frame.origin.x, y: faceTimeLabel.frame.origin.y)
-//        blurView.contentView.addSubview(contactsLabel)
-        
         // New Mute Image
         let muteImageView = UIImageView(image: UIImage(systemName: "mic.slash.fill"))
         muteImageView.frame.size = CGSize(width: 30, height: 30)
-        muteImageView.frame.origin = CGPoint(x: screenWidth * 0.25 - muteImageView.frame.width / 2, y: screenHeight * 0.6)
-        muteImageView.tintColor = buttonImageColor
-        muteImageView.contentMode = buttonImageContentMode
+        muteImageView.frame.origin = CGPoint(x: screenWidth * 0.25 - muteImageView.frame.width / 2, y: screenHeight * 0.65)
+        muteImageView.tintColor = .white
+        muteImageView.contentMode = .scaleAspectFit
         blurView.contentView.addSubview(muteImageView)
         
         let muteLabel = UILabel()
@@ -213,15 +86,15 @@ class CallingViewController: UIViewController {
         muteLabel.frame.origin = CGPoint(x: (muteImageView.frame.origin.x + muteImageView.frame.width / 2) - muteLabel.frame.width / 2, y: muteImageView.frame.origin.y + muteImageView.frame.height + 5)
         muteLabel.text = "mute"
         muteLabel.textAlignment = .center
-        muteLabel.textColor = buttonImageColor
+        muteLabel.textColor = .white
         blurView.contentView.addSubview(muteLabel)
         
         // New Speaker Image
         let speakerImageView = UIImageView(image: UIImage(systemName: "speaker.wave.3.fill"))
         speakerImageView.frame.size = CGSize(width: 35, height: 35)
         speakerImageView.frame.origin = CGPoint(x: screenWidth * 0.75 - speakerImageView.frame.width / 2, y: muteImageView.frame.origin.y - (speakerImageView.frame.height - muteImageView.frame.height) / 2)
-        speakerImageView.tintColor = buttonImageColor
-        speakerImageView.contentMode = buttonImageContentMode
+        speakerImageView.tintColor = .white
+        speakerImageView.contentMode = .scaleAspectFit
         blurView.contentView.addSubview(speakerImageView)
         
         let speakerLabel = UILabel()
@@ -229,20 +102,20 @@ class CallingViewController: UIViewController {
         speakerLabel.frame.origin = CGPoint(x: (speakerImageView.frame.origin.x + speakerImageView.frame.width / 2) - speakerLabel.frame.width / 2, y: muteLabel.frame.origin.y)
         speakerLabel.text = "speaker"
         speakerLabel.textAlignment = .center
-        speakerLabel.textColor = buttonImageColor
+        speakerLabel.textColor = .white
         blurView.contentView.addSubview(speakerLabel)
         
         // Hang Up Button
         let hangUpImage = UIImage(systemName: "phone.down.fill")
-        hangUpButton.frame.size = buttonSize
-        hangUpButton.frame.origin = CGPoint(x: screenWidth / 2 - buttonSize.width / 2, y: screenHeight * 0.75)
+        hangUpButton.frame.size = CGSize(width: 75, height: 75)
+        hangUpButton.frame.origin = CGPoint(x: screenWidth / 2 - hangUpButton.frame.size.width / 2, y: screenHeight * 0.77)
         hangUpButton.setImage(hangUpImage, for: .normal)
-        hangUpButton.imageView?.tintColor = buttonImageColor
-        hangUpButton.imageView?.contentMode = buttonImageContentMode
+        hangUpButton.imageView?.tintColor = .white
+        hangUpButton.imageView?.contentMode = .scaleAspectFit
         hangUpButton.contentHorizontalAlignment = .fill
         hangUpButton.contentVerticalAlignment = .fill
         hangUpButton.imageEdgeInsets = UIEdgeInsets(top: 16, left: 17, bottom: 18, right: 17)
-        hangUpButton.layer.cornerRadius = roundOff
+        hangUpButton.layer.cornerRadius = hangUpButton.frame.size.width / 2
         blurView.contentView.addSubview(hangUpButton)
         hangUpButton.isEnabled = true
         
